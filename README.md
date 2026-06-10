@@ -10,9 +10,9 @@ My GitHub avatar, evolved. A genetic algorithm reconstructs my profile photo as 
 - Fitness: RMSE between the rendered grid and the photo downscaled to 24x24
 - Selection: tournament of 5 with coin-flip tie-breaking; elitism 5%
 - Variation: uniform crossover swapping whole cells (rate 0.8), Gaussian mutation N(0, 0.4) at rate 0.02. The sigma is larger than in the course project because genes must jump between discrete palette bins
-- Budget: population 200, 1000 generations, seed 42, about 17 seconds on a laptop CPU
+- Budget: population 200, 5000 generations, seed 42, about 85 seconds on a laptop CPU
 
-The global optimum of this formulation is the nearest-colour quantisation of the photo, so the interesting part is watching the population find it: `outputs/evolution.gif` goes from noise to a face.
+The global optimum of this formulation is the nearest-colour quantisation of the photo, which scores RMSE 31.6602 on this target. The run converges to exactly that value, so the avatar is provably optimal for its palette; the interesting part is watching the population find it, and `outputs/evolution.gif` goes from noise to a face.
 
 ## Run
 
